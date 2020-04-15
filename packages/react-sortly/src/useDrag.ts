@@ -11,7 +11,7 @@ import ObjectLiteral from './types/ObjectLiteral';
 
 export default function useDrag<DragObject extends ObjectLiteral, DropResult, CollectedProps>(
   // @ts-ignore
-  spec?: Partial<DragSourceHookSpec<DragObject & { type?: DragObjectWithType['type'] }, DropResult, CollectedProps>>
+  spec?: Partial<DragSourceHookSpec<DragObject & { type: DragObjectWithType['type'] }, DropResult, CollectedProps>>
 ): [CollectedProps, ConnectDragSource, ConnectDragPreview] {
   const connectedDragRef = React.useRef<Connectable>();
   const { setDragMonitor, setConnectedDragSource, setInitialDepth } = React.useContext(context);
